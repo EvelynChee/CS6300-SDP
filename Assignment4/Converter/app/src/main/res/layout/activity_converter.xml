@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.gatech.seclass.converter.ConverterActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Distance Converter"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="290dp"
+            android:layout_gravity="left"
+            android:layout_weight="1">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/distValue" />
+
+            <RadioGroup
+                android:layout_width="163dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="From"
+                    android:id="@+id/textView2" />
+
+                <RadioButton
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="mile"
+                    android:id="@+id/rbFrommile"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="ft"
+                    android:id="@+id/rbFromft"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="inch"
+                    android:id="@+id/rbFrominch"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="km"
+                    android:id="@+id/rbFromkm"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="m"
+                    android:id="@+id/rbFromm"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="cm"
+                    android:id="@+id/rbFromcm"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CONVERT"
+                android:id="@+id/buttonConvert"
+                android:onClick="handleClick" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="290dp"
+            android:layout_gravity="right"
+            android:layout_weight="1">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/distResult" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="To"
+                    android:id="@+id/textView3"
+                    android:singleLine="true" />
+
+                <RadioButton
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="mile"
+                    android:id="@+id/rbTomile"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="ft"
+                    android:id="@+id/rbToft"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="inch"
+                    android:id="@+id/rbToinch"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="km"
+                    android:id="@+id/rbTokm"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="m"
+                    android:id="@+id/rbTom"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:text="cm"
+                    android:id="@+id/rbTocm"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RESET"
+                android:id="@+id/buttonReset"
+                android:onClick="handleClick" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

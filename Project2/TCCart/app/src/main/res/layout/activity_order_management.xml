@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="edu.gatech.seclass.tccart.OrderManagementActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Order Management"
+        android:id="@+id/textOMTitle"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:weightSum="1"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textOMTitle">
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/spinnerItem"
+            android:spinnerMode="dropdown"
+            android:entries="@array/items"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="  Unit Price: $"
+            android:id="@+id/textView6"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_weight="1" />
+
+        <EditText
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/editTextUnitPrice"
+            android:textColor="#000000"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:text="Add"
+            android:id="@+id/buttonAddItem"
+            android:onClick="addItem" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Shopping Cart"
+        android:id="@+id/textView23"
+        android:textColor="#FF000000"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listCart"
+        android:background="@drawable/customborder"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/textView"
+        android:layout_below="@+id/textView23" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="[Click on Shopping Cart Item to Delete]"
+        android:id="@+id/textView"
+        android:textColor="#4052b5"
+        android:layout_above="@+id/tableLayout2"
+        android:layout_centerHorizontal="true" />
+
+    <TableLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tableLayout2"
+        android:layout_above="@+id/buttonCheckout"
+        android:layout_centerHorizontal="true">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Cart Total:"
+                android:id="@+id/textView9"
+                android:textColor="#ff000000"
+                android:textAlignment="textEnd" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textCartTotal"
+                android:textAlignment="textEnd" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="VIP Customer Discount:"
+                android:id="@+id/textView22"
+                android:textAlignment="textEnd" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/textVipDiscount"
+                android:textAlignment="textEnd" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Reward Credit Discount:"
+                android:id="@+id/textView28"
+                android:textAlignment="textEnd" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/textCreditDiscount"
+                android:textAlignment="textEnd" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Total:"
+                android:id="@+id/textView33"
+                android:textColor="#ff000000"
+                android:textAlignment="textEnd" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textOrderTotal"
+                android:textAlignment="textEnd" />
+
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Complete Order and Checkout"
+        android:id="@+id/buttonCheckout"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="openPaymentManagement" />
+
+</RelativeLayout>

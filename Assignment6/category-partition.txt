@@ -1,0 +1,114 @@
+# File
+
+	File Size:
+		Empty.				[single][property emptyfile]
+		Not empty.					
+	
+	Number of lines outputted from file:
+		None.				[single][if !emptyfile] 
+		One.						[if !emptyfile]
+		Many.						[if !emptyfile]
+
+
+# Filename
+	
+	Existence of a file corresponding to the file name:
+		Not exist.			[error]
+		Exist.
+		
+	
+# Fields
+	
+	Existence of a list of fields:
+		Not exist.			[single]
+		One.				[single]
+	    Many.
+	
+    Existence of field input:
+		Exist.    			[property fieldInput]
+		Not Exist.			[single]
+	
+	Valid integer as field input:
+        Not integer.        		[if fieldInput]	[error]	
+		0.					[single][if fieldInput]
+		>0.							[if fieldInput][property fieldpositiveInt]			
+		<0.							[if fieldInput][error]		
+	
+	Existence of a range of field input:
+		Not exist.		
+		Exist.						[property fieldrangeExist]
+	
+	The Dash (-) used in range of field input?:
+		Yes.				        [if fieldrangeExist && fieldpositiveInt]
+		No.							[if fieldrangeExist && fieldpositiveInt] [error]
+	
+	Field input Range in reasonable bounds?:
+		Invalid range.				[if fieldrangeExist && fieldpositiveInt] [error]
+		Yes.						[if fieldrangeExist && fieldpositiveInt] 
+	
+	Existence of multiple fields input:
+		Yes.						[property multipleFields]
+		No.
+	
+	The Comma (,) used to seperate multiple fields?:
+		Yes.				        [if multipleFields && fieldpositiveInt]
+		No.							[if multipleFields && fieldpositiveInt] [error]	
+
+	
+# Delimiter
+	
+	Existence of delimiter:
+	    Not exist.                  
+		Exist. 						[property delimiterExist]
+		
+	Existence of custom delimiters:
+		custom delimiter.			[if delimiterExist]			
+		Not exist.					[if delimiterExist] [property nocustomDelimiter]
+	
+	Tab as default delimiter when no custom delimiter:
+		Yes.						[if nocustomDelimiter]
+		No.							[if nocustomDelimiter] [error]
+	
+	Delimiter length:
+		One.				[single][if delimiterExist]
+		More than one.				[if delimiterExist] [error]
+
+
+# List
+	
+	Existence of a list of characters:
+		Not exist.			[single]
+		One.				[single]
+        Many.				
+	
+	Existence of list input:
+		Exist.    			[property listInput]
+		Not Exist.			[single]
+	
+	Valid integer as list input:
+        Not integer.        		[if listInput]	[error]	
+		0.					[single][if listInput]
+		>0.							[if listInput]	[property listpositiveInt]			
+		<0.							[if listInput]	[error]		
+	
+	Existence of a range in list input:
+		Not exist.		
+		Exist.						[property listrangeExist]
+	
+	Dash (-) used in range of list input?:
+		Yes.				        [if listrangeExist && listpositiveInt]
+		No.							[if listrangeExist && listpositiveInt] [error]
+	
+	Range of list input in bounds?:
+		Invalid range.				[if listrangeExist && listpositiveInt] [error]
+		Yes.						[if listrangeExist && listpositiveInt] 
+	
+	Existence of multiple lists input:
+		Yes.						[property multipleLists]
+		No.
+	
+	Comma (,) used to seperate multiple Lists?:
+		Yes.				        [if multipleLists && listpositiveInt]
+		No.							[if multipleLists && listpositiveInt] [error]	
+
+
